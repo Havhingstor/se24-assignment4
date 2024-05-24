@@ -21,7 +21,7 @@ jobs:
     environment: default
     env:
       SONAR_ORGANIZATION: havhingstor
-      SONAR_PROJECT_KEY: se24-assignment4
+      SONAR_PROJECT_KEY: Havhingstor_se24-assignment4
 
     steps:
       - uses: actions/checkout@v4
