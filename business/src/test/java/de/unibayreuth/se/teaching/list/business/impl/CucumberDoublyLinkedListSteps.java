@@ -57,6 +57,11 @@ public class CucumberDoublyLinkedListSteps {
         logger.info("%s not implemented yet.".formatted(Thread.currentThread().getStackTrace()[1].getMethodName()));
     }
 
+    @When("I insert {double}")
+    public void iInsert(double arg0) {
+        list.insert(arg0);
+    }
+
     // Then -----------------------------------------------------------------------
 
     @Then("^the list should contain that element$")
@@ -77,5 +82,14 @@ public class CucumberDoublyLinkedListSteps {
     @Then("the list should contain {int} element(s)")
     public void theListShouldContainElement(int count) {
         Assertions.assertEquals(count, list.getLength());
+    }
+
+    @Then("the list should be the following")
+    public void theListShouldBeTheFollowing(List<Double> values) {
+        Assertions.assertEquals(list.getLength(), values.size());
+        double[] array = list.asArray();
+        for (int i = 0; i < values.size(); i++) {
+            Assertions.assertEquals(values.get(i), array[i]);
+        }
     }
 }
