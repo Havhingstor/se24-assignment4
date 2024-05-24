@@ -29,4 +29,9 @@ public class ListServiceImpl implements ListService {
                 value -> list.append(value.getDoubleValue())
         );
     }
+
+    @Override
+    public void deleteAll() {
+        list.clear();
+    }
 }
